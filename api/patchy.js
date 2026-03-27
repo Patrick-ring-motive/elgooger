@@ -63,8 +63,7 @@
         return new Response(
           Reflect.ownKeys(e).map((key) =>
             `${String(key)} : ${String(e[key])}`.join("\n"),
-          ),
-          {
+          ), {
             status: 469,
             statusText: e.message,
           },

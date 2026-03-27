@@ -100,9 +100,8 @@ const injectScript = readFileSync("./patchy.js", "utf8");
       WeakCache.delete(request.url);
       return new Response(
         Object.getOwnPropertyNames(e)
-          .map((x) => `${x} : ${e[x]}`)
-          .join(""),
-        {
+        .map((x) => `${x} : ${e[x]}`)
+        .join(""), {
           status: 569,
           statusText: e.message,
         },
@@ -119,7 +118,9 @@ const parse = (x) => {
   }
 };
 
-const { Readable } = require("stream");
+const {
+  Readable
+} = require("stream");
 const http = require("http");
 
 const nocacheHeaders = {
@@ -148,8 +149,7 @@ const hostTarget = "www.google.com";
 const globalReplaceHosts = ["www.google.com"];
 
 http
-  .createServer(
-    {
+  .createServer({
       joinDuplicateHeaders: true,
       insecureHTTPParser: true,
     },
@@ -172,8 +172,7 @@ async function onRequest(req, res) {
       body = Readable.toWeb(req);
     }
     console.log("Body: ", body);
-    const options = Object.assign(
-      {
+    const options = Object.assign({
         method: req.method,
         headers: req.headers,
       },
@@ -200,7 +199,9 @@ async function onRequest(req, res) {
     );
     response = new Response(
       response.clone().body,
-      Object.defineProperty(response.clone(), "headers", { value: headers }),
+      Object.defineProperty(response.clone(), "headers", {
+        value: headers
+      }),
     );
     response.headers.forEach((value, key) => {
       res.setHeader(key, String(value).replace(cloudHost, thisHost));

@@ -1,28 +1,27 @@
-html[location-host*="cheese"][window-top="true"]{
-  
-  filter:hue-rotate(-90deg);
-  
-  img:not([src*="header_img"]){
-    filter:hue-rotate(90deg);
+html[location-host*="cheese"][window-top="true"] {
+
+  filter: hue-rotate(-90deg);
+
+  img:not([src*="header_img"]) {
+    filter: hue-rotate(90deg);
   }
-  
+
 }
 
-html[location-host*="chicken"][window-top="true"]{
-  
-  filter:hue-rotate(45deg);
-  
-  img:not([src*="header_img"]){
-    filter:hue-rotate(-45deg);
+html[location-host*="chicken"][window-top="true"] {
+
+  filter: hue-rotate(45deg);
+
+  img:not([src*="header_img"]) {
+    filter: hue-rotate(-45deg);
   }
-  
+
 }
 
-html[window-top="false"] :not(:has(#textbar),#textbar,#textbar *){
-	display:none !important;
+html[window-top="false"] :not(:has(#textbar), #textbar, #textbar *) {
+  display: none !important;
 }
 
-
-html[location-href*="gts_my_trades"] #sidebar{
-	display:none !important;
+html[location-href*="gts_my_trades"] #sidebar {
+  display: none !important;
 }
